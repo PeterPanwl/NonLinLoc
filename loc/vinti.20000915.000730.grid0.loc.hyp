@@ -1,0 +1,31 @@
+NLLOC "./loc/vinti.20000915.000730.grid0" "LOCATED" "Location completed."
+SIGNATURE "Anthony Lomax - ALomax Scientific   NLLoc:v6.00.0 12Dec2015 00h14m58"
+COMMENT "1995 Vintimiglia Sequence (NonLinLoc Sample Location)"
+GRID  801 801 41  -50 -50 0  1 1 1 PROB_DENSITY
+SEARCH OCTREE nInitial 400 nEvaluated 10024 smallestNodeSide 0.312500/0.312500/0.040039 oct_tree_integral 1.130061e+01 scatter_volume 1.130061e+01
+HYPOCENTER  x 304.219 y 269.219 z 0.0200195  OT 25.9083  ix -1 iy -1 iz -1
+GEOGRAPHIC  OT 2000 09 15  00 07   25.9083  Lat 24.2646 Long 120.996 Depth 0.0200195
+QUALITY  Pmax 2.31778e+18 MFmin 12.2066 MFmax 12.7031 RMS 0.119356 Nphs 10 Gap 134.017 Dist 26.3545 Mamp  -9.9 0 Mdur  -9.9 0
+VPVSRATIO  VpVsRatio -1  Npair 0  Diff -2e+30
+STATISTICS  ExpectX 305.566 Y 268.394 Z 2.80218  CovXX 2.63062 XY -0.5303 XZ 2.00295 YY 3.98216 YZ -2.37164 ZZ 4.8413 EllAz1  119.272 Dip1  -38.0665 Len1  1.99689 Az2  220.366 Dip2  -13.8039 Len2  3.12507 Len3  5.165197e+00
+STAT_GEOG  ExpectLat 24.257 Long 121.009 Depth 2.80218
+TRANSFORM  LAMBERT RefEllipsoid Clarke-1880  LatOrig 21.860000  LongOrig 118.000000  FirstStdParal 20.500000  SecondStdParal 24.000000  RotCW 0.000000
+QML_OriginQuality  assocPhCt 12  usedPhCt 10  assocStaCt -1  usedStaCt 10  depthPhCt -1  stdErr 0.119356  azGap 134.017  secAzGap 188.037  gtLevel -  minDist 26.3545 maxDist 234.48 medDist 107.227
+QML_OriginUncertainty  horUnc -1  minHorUnc 2.37255  maxHorUnc 3.09522  azMaxHorUnc 160.939
+FOCALMECH  Hyp  24.2646 120.996 0.0200195 Mech  0 0 0 mf  0 nObs 0
+PHASE ID Ins Cmp On Pha  FM Date     HrMn   Sec     Err  ErrMag    Coda      Amp       Per  >   TTpred    Res       Weight    StaLoc(X  Y         Z)        SDist    SAzim  RAz  RDip RQual    Tcorr 
+TDCB   ?    ?    ? P      ? 20000915 0007     30.69 GAU       0.1        -1        -1        -1 >    4.7407    0.0410    1.5699  330.5720  268.9606   -0.5000   26.3545  90.56  90.6  44.5  4     0.0000
+SSLB   ?    ?    ? P      ? 20000915 0007     35.25 GAU       0.1        -1        -1        -1 >    9.3372    0.0045    1.6162  301.0231  216.3005   -0.5000   53.0147 183.46 183.5  44.1  4     0.0000
+NACB   ?    ?    ? P      ? 20000915 0007     36.48 GAU       0.1        -1        -1        -1 >   10.8326   -0.2608    1.0400  365.2851  260.4840   -0.5000   61.6879  98.14  98.1  44.1  4     0.0000
+TATO   ?    ?    ? P      ? 20000915 0007     42.11 GAU       0.1        -1        -1        -1 >   16.2701   -0.0683    1.5038  352.4071  349.0241   -0.5000   93.2256  31.12  31.1  44.0  4     0.0000
+YULB   ?    ?    ? P      ? 20000915 0007     45.59 GAU       0.1        -1        -1        -1 >   17.6721    2.0096    0.0003  336.9343  173.2861   -0.5000  101.3576 161.17 161.2  43.9  4     0.0000
+TPUB   ?    ?    ? P      ? 20000915 0007     45.45 GAU       0.1        -1        -1        -1 >   19.6604   -0.1187    1.3805  268.9063  161.7773   -0.5000  113.0957 198.19 198.2  37.8  5     0.0000
+ANPB   ?    ?    ? P      ? 20000915 0007     45.85 GAU       0.1        -1        -1        -1 >   19.9874   -0.0457    1.4189  355.1052  372.4935   -0.5000  115.1308  26.23  26.2  37.2  5     0.0000
+WFSB   ?    ?    ? P      ? 20000915 0007     46.63 GAU       0.1        -1        -1        -1 >   20.7016    0.0201    1.3668  381.7284  360.3284   -0.5000  119.6191  40.39  40.4  36.6  5     0.0000
+TWGB   ?    ?    ? P      ? 20000915 0007     53.36 GAU       0.1        -1        -1        -1 >   26.7094    0.7423    0.1037  316.0368  109.2016   -0.5000  160.4530 175.78 175.8  32.4  6     0.0000
+MATB   ?    ?    ? P      ? 20000915 0007     59.46 GAU       0.1        -1        -1        -1 >   37.4380   -3.8863    0.0000  194.9010  476.6566   -0.5000  234.4800 332.21 332.2  32.4  6     0.0000
+KMNB   ?    ?    ? P      ? 20000915 0007     52.28 GAU       0.1        -1        -1        -1 >    0.0000    0.0000    0.0000   39.3895  288.3200   -0.5000    0.0000   0.00   0.0   0.0  0     0.0000
+TWKB   ?    ?    ? P      ? 20000915 0007     67.31 GAU       0.1        -1        -1        -1 >    0.0000    0.0000    0.0000  290.4058   11.6195   -0.5000    0.0000   0.00   0.0   0.0  0     0.0000
+END_PHASE
+END_NLLOC
+

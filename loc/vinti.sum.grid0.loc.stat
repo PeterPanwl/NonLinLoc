@@ -1,0 +1,32 @@
+
+#Average Phase Residuals (CalcResidual)  RMS_Max: 9999.000000  NRdgs_Min: -1  Gap_Max: 9999.000000  P_Res_Max: 1.000000  S_Res_Max: 1.000000  Ell_Len3_Max: 9999.900000  Hypo_Depth_Min: -9999.900000  Hypo_Depth_Max: 9999.900000  Hypo_Dist_Max: 1000000000000000019884624838656.000000
+#         ID      Phase   Nres      AveRes       StdDev       ResMin       ResMax     ignored
+LOCDELAY  ANPB                                                             P                                                                1        0.099466     -1.000000    0.099466     0.099466     0
+LOCDELAY  MATB                                                             P                                                                1        0.900776     -1.000000    0.900776     0.900776     0
+LOCDELAY  TPUB                                                             P                                                                1        -0.178771    -1.000000    -0.178771    -0.178771    0
+LOCDELAY  WFSB                                                             P                                                                1        -0.229697    -1.000000    -0.229697    -0.229697    0
+LOCDELAY  YULB                                                             P                                                                1        0.141415     -1.000000    0.141415     0.141415     0
+
+#Total Phase Corrections (CalcResidual + InputDelay)  RMS_Max: 9999.000000  NRdgs_Min: -1  Gap_Max: 9999.000000  P_Res_Max: 1.000000  S_Res_Max: 1.000000  Ell_Len3_Max: 9999.900000  Hypo_Depth_Min: -9999.900000  Hypo_Depth_Max: 9999.900000  Hypo_Dist_Max: 1000000000000000019884624838656.000000
+#         ID      Phase   Nres      TotCorr      StdDev
+LOCDELAY  ANPB                                                             P                                                                1        0.099466     -1.000000   
+LOCDELAY  MATB                                                             P                                                                1        0.900776     -1.000000   
+LOCDELAY  TPUB                                                             P                                                                1        -0.178771    -1.000000   
+LOCDELAY  WFSB                                                             P                                                                1        -0.229697    -1.000000   
+LOCDELAY  YULB                                                             P                                                                1        0.141415     -1.000000   
+
+#Average Phase Residuals PDF (CalcPDFResidual)  RMS_Max: 9999.000000  NRdgs_Min: -1  Gap_Max: 9999.000000  P_Res_Max: 1.000000  S_Res_Max: 1.000000  Ell_Len3_Max: 9999.900000  Hypo_Depth_Min: -9999.900000  Hypo_Depth_Max: 9999.900000  Hypo_Dist_Max: 1000000000000000019884624838656.000000
+#         ID      Phase   Nres      AveRes       StdDev       ResMin       ResMax     ignored
+LOCDELAY  ANPB                                                             P                                                                0        0.000000     -1.000000    0.099466     0.099466     0
+LOCDELAY  MATB                                                             P                                                                0        0.000000     -1.000000    0.900776     0.900776     0
+LOCDELAY  TPUB                                                             P                                                                0        0.000000     -1.000000    -0.178771    -0.178771    0
+LOCDELAY  WFSB                                                             P                                                                0        0.000000     -1.000000    -0.229697    -0.229697    0
+LOCDELAY  YULB                                                             P                                                                0        0.000000     -1.000000    0.141415     0.141415     0
+
+#Total Phase Corrections PDF (CalcPDFResidual + InputDelay)  RMS_Max: 9999.000000  NRdgs_Min: -1  Gap_Max: 9999.000000  P_Res_Max: 1.000000  S_Res_Max: 1.000000  Ell_Len3_Max: 9999.900000  Hypo_Depth_Min: -9999.900000  Hypo_Depth_Max: 9999.900000  Hypo_Dist_Max: 1000000000000000019884624838656.000000
+#         ID      Phase   Nres      TotCorr      StdDev
+LOCDELAY  ANPB                                                             P                                                                0        0.000000     -1.000000   
+LOCDELAY  MATB                                                             P                                                                0        0.000000     -1.000000   
+LOCDELAY  TPUB                                                             P                                                                0        0.000000     -1.000000   
+LOCDELAY  WFSB                                                             P                                                                0        0.000000     -1.000000   
+LOCDELAY  YULB                                                             P                                                                0        0.000000     -1.000000   

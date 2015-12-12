@@ -1,0 +1,193 @@
+#!/bin/csh
+#
+#
+
+gmtset  PAGE_ORIENTATION portrait  X_ORIGIN 0.5  Y_ORIGIN 0.5 
+
+gmtset  ANNOT_FONT_SIZE_PRIMARY 8  ANNOT_FONT_SIZE_SECONDARY 6  HEADER_FONT_SIZE 12 LABEL_FONT_SIZE 10
+
+gmtset  LABEL_OFFSET 0.1c  ANNOT_OFFSET_PRIMARY 0.1c ANNOT_OFFSET_SECONDARY 0.1c
+
+set POSTSCRIPT_NAME = gmt/vinti.20000915.000730.grid0.loc.LS
+
+unalias rm
+
+rm -f $POSTSCRIPT_NAME.ps
+
+# ========================================================
+# Optional X/Y or LAT/LONG plotting
+# NOTE: LAT/LONG plotting works only for unrotated, Horizontal section (H) plots
+#     for X/Y plot, uncomment the folowing line:
+set PLOT_LAT_LONG = 0
+#     for LAT/LONG plot, uncomment the folowing line:
+#set PLOT_LAT_LONG = 1
+# ========================================================
+
+psbasemap -R0.5/1.0/0.5/1.0 -Bf10 -JX20.000000/28.700000 -K > $POSTSCRIPT_NAME.ps
+
+pstext -R0.5/1.0/0.5/1.0 -Bf10 -JX20.000000/28.700000 -K -O << END >> $POSTSCRIPT_NAME.ps
+0.750000 0.980000 17 0 4 2 1995 Vintimiglia Sequence (NonLinLoc Sample Location)
+END
+
+pstext -R0.5/1.0/0.5/1.0 -Bf10 -JX20.000000/28.700000 -K -O << END >> $POSTSCRIPT_NAME.ps
+0.750000 0.970000 13 0 4 2 2000 09 15  00:07:24.5974  Lat: 24.222  Long: 120.923  Z: 0.08km  RMS: 0.08s  Mag: -9.9
+END
+
+pstext -R0.5/1.0/0.5/1.0 -Bf10 -JX20.000000/28.700000 -K -O << END >> $POSTSCRIPT_NAME.ps
+0.750000 0.960000 13 0 4 2 PDF scatter sample
+END
+
+# Rect x/y in km
+set RVAL = '-R-50.000000/350.000000/0.000000/40.000000/-9999/9999'
+# Rect x/y in km
+set BVAL = '-B100.000000:X(km):/10.000000:Z(km)::.:WEnS'
+# Rect x/y in km
+set JVAL = '-Jx0.035511/-0.035511 -Jz-0.035511'
+
+psbasemap $JVAL $RVAL $BVAL -X1.750000 -Y3.750000 -K -O >> $POSTSCRIPT_NAME.ps
+
+psxy loc/vinti.20000915.000730.grid0.loc.scat.XZ $JVAL $RVAL -W1/255/0/0 -Sp -m -K -O >> $POSTSCRIPT_NAME.ps
+# Maximum Likelihood
+psxy $JVAL $RVAL -W1/0/0/255 -Sa0.125984 -G0/0/255 -K -O << END >> ${POSTSCRIPT_NAME}.ps
+-7.812500 0.080078
+END
+
+
+if (-e Grid2GMT.Y.gmt) then
+   echo  'Running auxilliary GMT script: Grid2GMT.Y.gmt'
+   source  Grid2GMT.Y.gmt
+endif
+
+psbasemap $JVAL $RVAL $BVAL -K -O >> $POSTSCRIPT_NAME.ps
+
+
+# Rect x/y in km
+set RVAL = '-R-50.000000/350.000000/-50.000000/350.000000/-9999/9999'
+# Rect x/y in km
+set BVAL = '-B100.000000:X(km):/100.000000:Y(km)::.:WeNs'
+# Rect x/y in km
+set JVAL = '-Jx0.035511/0.035511 -Jz0.035511'
+
+if (! $PLOT_LAT_LONG) then
+psbasemap $JVAL $RVAL $BVAL -X0.000000 -Y2.134740 -K -O >> $POSTSCRIPT_NAME.ps
+endif
+if ($PLOT_LAT_LONG) then
+# Latitude/Longitude in degrees
+set RVAL_LL = '-R120.508910/124.536924/23.907682/27.478122'
+# Latitude/Longitude in degrees
+set BVAL_LL = '-B1.000000:Long(deg):/1.000000:Lat(deg)::.:WeNs'
+# Latitude/Longitude in degrees
+set JVAL_LL = '-JL121.000000/24.360000/23.350000/25.360000/14.204545 -Jz3.978375'
+psbasemap ${JVAL_LL} ${RVAL_LL} ${BVAL_LL} -X0.000000 -Y2.134740 -K -O >> $POSTSCRIPT_NAME.ps
+endif
+
+psxy loc/vinti.20000915.000730.grid0.loc.scat.XY $JVAL $RVAL -W1/255/0/0 -Sp -m -K -O >> $POSTSCRIPT_NAME.ps
+# Maximum Likelihood
+psxy $JVAL $RVAL -W1/0/0/255 -Sa0.125984 -G0/0/255 -K -O << END >> ${POSTSCRIPT_NAME}.ps
+-7.812500 -15.312500
+END
+
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+25.891600 -11.338000 8 0 4 6 TDCB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+60.422700 -20.490100 8 0 4 6 NACB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+49.280100 68.239700 8 0 4 6 TATO
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+52.433500 91.632600 8 0 4 6 ANPB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+78.792400 78.963000 8 0 4 6 WFSB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+-4.687900 -63.396100 8 0 4 6 SSLB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+-37.891300 -117.276200 8 0 4 6 TPUB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+30.371100 -107.117100 8 0 4 6 YULB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+-264.725400 13.983100 8 0 4 6 KMNB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+8.204400 -170.805000 8 0 4 6 TWGB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+-105.465900 198.846500 8 0 4 6 MATB
+END
+
+# Station
+pstext $JVAL $RVAL -S4,0 -G255 -K -O << END >> $POSTSCRIPT_NAME.ps
+-19.384200 -267.945900 8 0 4 6 TWKB
+END
+
+if (-e Grid2GMT.H.gmt) then
+   echo  'Running auxilliary GMT script: Grid2GMT.H.gmt'
+   source  Grid2GMT.H.gmt
+endif
+
+if (! $PLOT_LAT_LONG) then
+psbasemap $JVAL $RVAL $BVAL -K -O >> $POSTSCRIPT_NAME.ps
+endif
+if ($PLOT_LAT_LONG) then
+psbasemap ${JVAL_LL} ${RVAL_LL} ${BVAL_LL} -K -O >> $POSTSCRIPT_NAME.ps
+endif
+
+
+# Rect x/y in km
+set RVAL = '-R0.000000/40.000000/-50.000000/350.000000/-9999/9999'
+# Rect x/y in km
+set BVAL = '-B10.000000:Z(km):/100.000000:Y(km)::.:wENS'
+# Rect x/y in km
+set JVAL = '-Jx0.035511/0.035511 -Jz0.035511'
+
+psbasemap $JVAL $RVAL $BVAL -X14.918831 -Y0.000000 -K -O >> $POSTSCRIPT_NAME.ps
+
+psxy loc/vinti.20000915.000730.grid0.loc.scat.ZY $JVAL $RVAL -W1/255/0/0 -Sp -m -K -O >> $POSTSCRIPT_NAME.ps
+# Maximum Likelihood
+psxy $JVAL $RVAL -W1/0/0/255 -Sa0.125984 -G0/0/255 -K -O << END >> ${POSTSCRIPT_NAME}.ps
+0.080078 -15.312500
+END
+
+
+if (-e Grid2GMT.X.gmt) then
+   echo  'Running auxilliary GMT script: Grid2GMT.X.gmt'
+   source  Grid2GMT.X.gmt
+endif
+
+psbasemap $JVAL $RVAL $BVAL -K -O >> $POSTSCRIPT_NAME.ps
+
+
+pstext -R0.5/1.0/0.5/1.0 -Bf10 -JX20.000000/28.700000 -X-16.668831 -Y-5.884740 -O << END >> $POSTSCRIPT_NAME.ps
+0.501000 0.501000 7 0 4 1 Anthony Lomax - ALomax Scientific   NLLoc:v6.00.0 11Dec2015 23h17m31   Grid2GMT:v6.00.0 11Dec2015 23h19m42
+END
+
+echo "Finished!  Output is:"
+echo "   $POSTSCRIPT_NAME.ps"
